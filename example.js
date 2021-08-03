@@ -1,4 +1,4 @@
-const Matrix = require('./a.out.js')
+const Matrix = require('./hmat.js')
 
 
 Matrix().then(function(Module) { 
