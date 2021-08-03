@@ -17,12 +17,12 @@ mat_float  : 64 bit double
  
  
 ## Operations
-as a general rule, always use the built libary algs when possible, as they are much faster then vanilla JS.
+as a general rule, always use the built libary algs when possible, as they are much faster than vanilla JS.
 
-| name         | 1000x1000 mat_float speedup | description                                                                |
-| :----------- | :-------------------------: | -------------------------------------------------------------------------- |
-| `fill_mat_*` |            ~4.8x            | Fills a matrix with a given value                                          |
-| `copy_mat_*` |            ~11x             | Copies the contents of one matrix to another, without modifying dimensions |
-| `sort_mat_*` |            ~24x             | Sorts a given matrix                                                       |
+| name         | 1000x1000 `mat_float` speedup | description                                                                |
+| :----------- | :---------------------------: | -------------------------------------------------------------------------- |
+| `fill_mat_*` |             ~4.8x             | Fills a matrix with a given value                                          |
+| `copy_mat_*` |             ~11x              | Copies the contents of one matrix to another, without modifying dimensions |
+| `sort_mat_*` |             ~24x              | Sorts a given matrix                                                       |
 
 speedup increases as size does.
