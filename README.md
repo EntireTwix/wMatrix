@@ -3,10 +3,10 @@ a port of [Matrix](https://github.com/EntireTwix/Matrix) for WASM
 
 the currently supported types are 
 ```
-mat_i32   : signed 32 bit integer
-mat_uin32 : unsigned 32 bit integer
-mat_bool  : 8 bit bool (no bit array yet)
-mat_float : 64 bit double
+mat_i32    : signed 32 bit integer
+mat_uint32 : unsigned 32 bit integer
+mat_bool   : 8 bit bool (no bit array yet)
+mat_float  : 64 bit double
 ```
 
 ## Operations
