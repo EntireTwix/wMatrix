@@ -31,12 +31,15 @@ EMSCRIPTEN_BINDINGS(module)
     function("copy_mat_i32_bool", &Copy<hMat<int32_t>, hMat<bool>>);
     function("copy_mat_i32_float", &Copy<hMat<int32_t>, hMat<float>>);
 
+    function("sort_mat_i32", &SortMut<hMat<int32_t>>);
+
     MAT_GEN(mat_bool, bool)
     function("fill_mat_bool", &Fill<hMat<bool>, bool>);
-
     function("copy_mat_bool_i32", &Copy<hMat<bool>, hMat<int32_t>>);
     function("copy_mat_bool_bool", &Copy<hMat<bool>>);
     function("copy_mat_bool_float", &Copy<hMat<bool>, hMat<float>>);
+
+    function("sort_mat_bool", &SortMut<hMat<bool>>);
 
     MAT_GEN(mat_float, double)
     function("fill_mat_float", &Fill<hMat<double>, double>);
