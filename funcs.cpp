@@ -27,16 +27,29 @@ EMSCRIPTEN_BINDINGS(module)
     MAT_GEN(mat_i32, int32_t)
     function("fill_mat_i32", &Fill<hMat<int32_t>, int32_t>);
 
-    function("copy_mat_i32_i32", &Copy<hMat<int32_t>>);
+    function("copy_mat_i32_i32", &Copy<hMat<int32_t>>); //self
+    function("copy_mat_i32_ui32", &Copy<hMat<int32_t>, hMat<uint32_t>>);
     function("copy_mat_i32_bool", &Copy<hMat<int32_t>, hMat<bool>>);
     function("copy_mat_i32_float", &Copy<hMat<int32_t>, hMat<float>>);
 
     function("sort_mat_i32", &SortMut<hMat<int32_t>>);
 
+    MAT_GEN(mat_ui32, uint32_t)
+    function("fill_mat_ui32", &Fill<hMat<uint32_t>, uint32_t>);
+
+    function("copy_mat_ui32_i32", &Copy<hMat<uint32_t>, hMat<int32_t>>);
+    function("copy_mat_ui32_ui32", &Copy<hMat<uint32_t>>); //self
+    function("copy_mat_ui32_bool", &Copy<hMat<uint32_t>, hMat<bool>>);
+    function("copy_mat_ui32_float", &Copy<hMat<uint32_t>, hMat<float>>);
+
+    function("sort_mat_i32", &SortMut<hMat<int32_t>>);
+
     MAT_GEN(mat_bool, bool)
     function("fill_mat_bool", &Fill<hMat<bool>, bool>);
+
     function("copy_mat_bool_i32", &Copy<hMat<bool>, hMat<int32_t>>);
-    function("copy_mat_bool_bool", &Copy<hMat<bool>>);
+    function("copy_mat_bool_ui32", &Copy<hMat<bool>, hMat<uint32_t>>);
+    function("copy_mat_bool_bool", &Copy<hMat<bool>>); //self
     function("copy_mat_bool_float", &Copy<hMat<bool>, hMat<float>>);
 
     function("sort_mat_bool", &SortMut<hMat<bool>>);
@@ -44,9 +57,10 @@ EMSCRIPTEN_BINDINGS(module)
     MAT_GEN(mat_float, double)
     function("fill_mat_float", &Fill<hMat<double>, double>);
 
-    function("copy_mat_float_bool", &Copy<hMat<double>, hMat<bool>>);
     function("copy_mat_float_i32", &Copy<hMat<double>, hMat<int32_t>>);
-    function("copy_mat_float_float", &Copy<hMat<double>>);
+    function("copy_mat_float_ui32", &Copy<hMat<double>, hMat<uint32_t>>);
+    function("copy_mat_float_bool", &Copy<hMat<double>, hMat<bool>>);
+    function("copy_mat_float_float", &Copy<hMat<double>>); //self
 
     function("sort_mat_float", &SortMut<hMat<double>>);
 }
