@@ -27,12 +27,12 @@ EMSCRIPTEN_BINDINGS(module)
     MAT_GEN(mat_i32, int32_t)
     function("fill_mat_i32_i32", &Fill<hMat<int32_t>, int32_t>);
     function("fill_mat_i32_i64", &Fill<hMat<int32_t>, int64_t>);
-    function("fill_mat_i32_float", &Fill<hMat<int32_t>, float>); 
+    function("fill_mat_i32_f32", &Fill<hMat<int32_t>, float>); 
     function("fill_mat_i32_f64", &Fill<hMat<int32_t>, double>);
 
     function("copy_mat_i32_i32", &Copy<hMat<int32_t>>); //self
     function("copy_mat_i32_i64", &Copy<hMat<int32_t>, hMat<int64_t>>);
-    function("copy_mat_i32_float", &Copy<hMat<int32_t>, hMat<float>>);
+    function("copy_mat_i32_f32", &Copy<hMat<int32_t>, hMat<float>>);
     function("copy_mat_i32_f64", &Copy<hMat<int32_t>, hMat<double>>);
 
     function("sort_mat_i32", &SortMut<hMat<int32_t>>);
@@ -40,38 +40,38 @@ EMSCRIPTEN_BINDINGS(module)
     MAT_GEN(mat_i64, int64_t)
     function("fill_mat_i64_i32", &Fill<hMat<int64_t>, int32_t>);
     function("fill_mat_i64_i64", &Fill<hMat<int64_t>, int64_t>);
-    function("fill_mat_i64_float", &Fill<hMat<int64_t>, float>); 
+    function("fill_mat_i64_f32", &Fill<hMat<int64_t>, float>); 
     function("fill_mat_i64_f64", &Fill<hMat<int64_t>, double>);
 
     function("copy_mat_i64_i32", &Copy<hMat<int64_t>, hMat<int32_t>>);
     function("copy_mat_i64_i64", &Copy<hMat<int64_t>>); //self
-    function("copy_mat_i64_float", &Copy<hMat<int64_t>, hMat<float>>);
+    function("copy_mat_i64_f32", &Copy<hMat<int64_t>, hMat<float>>);
     function("copy_mat_i64_f64", &Copy<hMat<int64_t>, hMat<double>>);
 
-    function("sort_mat_i32", &SortMut<hMat<int32_t>>);
+    function("sort_mat_i64", &SortMut<hMat<int32_t>>);
 
     MAT_GEN(mat_f32, float)
-    function("fill_mat_float_i32", &Fill<hMat<float>, int32_t>);
-    function("fill_mat_float_i64", &Fill<hMat<float>, int64_t>);
-    function("fill_mat_float_float", &Fill<hMat<float>, float>); 
-    function("fill_mat_float_f64", &Fill<hMat<float>, double>);
+    function("fill_mat_f32_i32", &Fill<hMat<float>, int32_t>);
+    function("fill_mat_f32_i64", &Fill<hMat<float>, int64_t>);
+    function("fill_mat_f32_f32", &Fill<hMat<float>, float>); 
+    function("fill_mat_f32_f64", &Fill<hMat<float>, double>);
 
-    function("copy_mat_float_i32", &Copy<hMat<float>, hMat<int32_t>>);
-    function("copy_mat_float_i64", &Copy<hMat<float>, hMat<int64_t>>);
-    function("copy_mat_float_float", &Copy<hMat<float>>); //self
-    function("copy_mat_float_f64", &Copy<hMat<float>, hMat<double>>);
+    function("copy_mat_f32_i32", &Copy<hMat<float>, hMat<int32_t>>);
+    function("copy_mat_f32_i64", &Copy<hMat<float>, hMat<int64_t>>);
+    function("copy_mat_f32_f32", &Copy<hMat<float>>); //self
+    function("copy_mat_f32_f64", &Copy<hMat<float>, hMat<double>>);
 
-    function("sort_mat_float", &SortMut<hMat<float>>);
+    function("sort_mat_f32", &SortMut<hMat<float>>);
 
     MAT_GEN(mat_f64, double)
     function("fill_mat_f64_i32", &Fill<hMat<double>, int32_t>);
     function("fill_mat_f64_i64", &Fill<hMat<double>, int64_t>);
-    function("fill_mat_f64_float", &Fill<hMat<double>, float>); 
+    function("fill_mat_f64_f32", &Fill<hMat<double>, float>); 
     function("fill_mat_f64_f64", &Fill<hMat<double>, double>);
     
     function("copy_mat_f64_i32", &Copy<hMat<double>, hMat<int32_t>>);
     function("copy_mat_f64_i64", &Copy<hMat<double>, hMat<int64_t>>);
-    function("copy_mat_f64_float", &Copy<hMat<double>, hMat<float>>);
+    function("copy_mat_f64_f32", &Copy<hMat<double>, hMat<float>>);
     function("copy_mat_f64_f64", &Copy<hMat<double>>); //self
 
     function("sort_mat_f64", &SortMut<hMat<double>>);
