@@ -38,10 +38,10 @@ EMSCRIPTEN_BINDINGS(module)
     function("sort_mat_i32", &SortMut<hMat<int32_t>>);
 
     MAT_GEN(mat_i64, int64_t)
-    function("fill_mat_i64_i32", &Fill<hMat<int32_t>, int32_t>);
-    function("fill_mat_i64_i64", &Fill<hMat<int32_t>, int64_t>);
-    function("fill_mat_i64_float", &Fill<hMat<int32_t>, float>); 
-    function("fill_mat_i64_f64", &Fill<hMat<int32_t>, double>);
+    function("fill_mat_i64_i32", &Fill<hMat<int64_t>, int32_t>);
+    function("fill_mat_i64_i64", &Fill<hMat<int64_t>, int64_t>);
+    function("fill_mat_i64_float", &Fill<hMat<int64_t>, float>); 
+    function("fill_mat_i64_f64", &Fill<hMat<int64_t>, double>);
 
     function("copy_mat_i64_i32", &Copy<hMat<int64_t>, hMat<int32_t>>);
     function("copy_mat_i64_i64", &Copy<hMat<int64_t>>); //self
