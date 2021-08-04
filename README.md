@@ -10,19 +10,21 @@ mat_f64    : 64 bit float                 (JS number)
 ```
 
 ## Member Functions
-| name                                 | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                            |
-| :----------------------------------- | :-------------------------: | :-------------------------: | ------------------------------------------------------ |
-| `.width()`                           |            `N/A`            |            `N/A`            | Retrieves the `width` of the matrix                    |
-| `.height()`                          |            `N/A`            |            `N/A`            | Retrieves the `height` of the matrix                   |
-| `.area()`                            |            0.70x            |            0.73x            | Retrieves the `area` of the matrix                     |
-| `.capacity()`                        |            `N/A`            |            `N/A`            | Retrieves the current number of elements allocated     |
-| `.reserve(size_t n)`                 |            `N/A`            |            `N/A`            | Reserves `n` elements in memory                        |
-| `.resize(size_t w, size_t h)`        |          0.85x-6x           |           2x-11x            | Resizes the array to a new size                        |
-| `.flatten()`                         |            `N/A`            |            `N/A`            | Flattens a matrix into a 1D vector                     |
-| `.set_at(size_t w, size_t h, T val)` |              ?              |              ?              | Setting the value of the matrix, indexed as a 2D array |
-| `.get_at(size_t w, size_t h)`        |              ?              |              ?              | Indexing as a 2D array                                 |
-| `.set_fast_at(size_t idx, T val)`    |              ?              |              ?              | Setting the value of the matrix, indexed as a 1D array |
-| `.get_fast_at(size_t idx)`           |              ?              |              ?              | Indexing as a 1D array                                 |
+| name                                   | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                            |
+| :------------------------------------- | :-------------------------: | :-------------------------: | ------------------------------------------------------ |
+| `new Module.mat_*(mat_* m)`            |            1.79x            |            4.87x            | Constructs a new Matrix from an existing one           |
+| `new Module.mat_*(size_t w, size_t h)` |            1.66x            |            4.37x            | Constructs a new Matrix of `w * h`                     |
+| `.width()`                             |            `N/A`            |            `N/A`            | Returns the `width` of the matrix                      |
+| `.height()`                            |            `N/A`            |            `N/A`            | Returns the `height` of the matrix                     |
+| `.area()`                              |            0.70x            |            0.73x            | Returns the `area` of the matrix                       |
+| `.capacity()`                          |            `N/A`            |            `N/A`            | Returns the current number of elements allocated       |
+| `.reserve(size_t n)`                   |            `N/A`            |            `N/A`            | Reserves `n` elements in memory                        |
+| `.resize(size_t w, size_t h)`          |          0.85x-6x           |           2x-11x            | Resizes the array to a new size                        |
+| `.flatten()`                           |            `N/A`            |            `N/A`            | Flattens a matrix into a 1D vector                     |
+| `.set_at(size_t w, size_t h, T val)`   |              ?              |              ?              | Setting the value of the matrix, indexed as a 2D array |
+| `.get_at(size_t w, size_t h)`          |              ?              |              ?              | Indexing as a 2D array                                 |
+| `.set_fast_at(size_t idx, T val)`      |              ?              |              ?              | Setting the value of the matrix, indexed as a 1D array |
+| `.get_fast_at(size_t idx)`             |              ?              |              ?              | Indexing as a 1D array                                 |
  
  
 ## Operations
