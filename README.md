@@ -9,6 +9,7 @@ mat_f32    : 32 bit float
 mat_f64    : 64 bit float                 (JS number)
 ```
 
+all tests done with JS Array
 ## Member Functions
 | name                                   | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                            |
 | :------------------------------------- | :-------------------------: | :-------------------------: | ------------------------------------------------------ |
@@ -32,8 +33,8 @@ as a general rule, always use the built libary algs when possible, as they are m
 
 | name         | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                                                |
 | :----------- | :-------------------------: | :-------------------------: | -------------------------------------------------------------------------- |
-| `fill_mat_*` |             ~5x             |            ~28x             | Fills a matrix with a given value                                          |
-| `copy_mat_*` |            ~11x             |            ~26x             | Copies the contents of one matrix to another, without modifying dimensions |
+| `fill_mat_*` |             ~2x             |             ~5x             | Fills a matrix with a given value                                          |
+| `copy_mat_*` |             ~7x             |            ~14x             | Copies the contents of one matrix to another, without modifying dimensions |
 | `sort_mat_*` |            ~24x             |            ~78x             | Sorts a given matrix                                                       |
 
 speedup increases as size does.
