@@ -4,9 +4,9 @@ a port of [Matrix](https://github.com/EntireTwix/Matrix) for WASM
 the currently supported types are 
 ```
 mat_i32    : signed 32 bit integer
-mat_i64    : unsigned 32 bit integer
-mat_f32    : 32 bit float    
-mat_f64    : 64 bit float
+mat_i64    : signed 64 bit integer        (JS BigInt required)
+mat_f32    : 32 bit float
+mat_f64    : 64 bit float                 (JS number)
 ```
 
 ## Member Functions
