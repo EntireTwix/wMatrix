@@ -1,19 +1,10 @@
 #pragma once
-#include <algorithm>
+#include <random>
 
 namespace mat
 {
-    template <typename M, typename T>
-    constexpr void Fill(M &mat, T v)
-    {
-        for (typename M::type &e : mat)
-        {
-            e = v;
-        }
-    }
-
     template <typename M, typename M2>
-    constexpr void Copy(const M &src, M2 &dest)
+    void Copy(const M &src, M2 &dest)
     {
         if (src.Area() == dest.Area())
         {
@@ -37,7 +28,7 @@ namespace mat
         }
     }
     template <typename M>
-    constexpr void Copy(const M &src, M &dest)
+    void Copy(const M &src, M &dest)
     {
         if (src.Area() == dest.Area())
         {
@@ -59,8 +50,14 @@ namespace mat
     }
 
     template <typename M>
-    constexpr void SortMut(M &mat)
+    void RandFill(M &mat, typename M::type min, typename M::type max)
     {
-        std::sort(mat.begin(), mat.end());
+        assert(max > min);
+        std::default_random_engine generator;
+        std::uniform_real_distribution<typename M::type> distribution(min, max);
+        for (auto &e : mat)
+        {
+            e = distribution(generator);
+        }
     }
 };
