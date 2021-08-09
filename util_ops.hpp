@@ -53,7 +53,7 @@ namespace mat
     void RandFill(M &mat, typename M::type min, typename M::type max)
     {
         assert(max > min);
-        std::default_random_engine generator;
+        static std::default_random_engine generator;
         std::uniform_real_distribution<typename M::type> distribution(min, max);
         for (auto &e : mat)
         {
