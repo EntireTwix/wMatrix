@@ -9,7 +9,7 @@ mat_f32    : 32 bit float
 mat_f64    : 64 bit float                 (JS number)
 ```
 
-all tests done with JS Array
+all tests done with JS Array, speedup varies per system of course.
 ## Member Functions
 | name                                   | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                            |
 | :------------------------------------- | :-------------------------: | :-------------------------: | ------------------------------------------------------ |
