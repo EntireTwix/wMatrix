@@ -33,7 +33,7 @@ as a general rule, always use the built libary algs when possible, as they are m
 
 | name             | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                                                |
 | :--------------- | :-------------------------: | :-------------------------: | -------------------------------------------------------------------------- |
-| `randfill_mat_*` |             ~1x             |             ~1x             | Fills a matrix with a random value between `min` and `max`                 |
+| `randfill_mat_*` |           ~1.20x            |           ~1.20x            | Fills a matrix with a random value between `min` and `max`                 |
 | `fill_mat_*`     |             ~2x             |             ~5x             | Fills a matrix with a given value                                          |
 | `copy_mat_*`     |             ~7x             |            ~14x             | Copies the contents of one matrix to another, without modifying dimensions |
 | `sort_mat_*`     |            ~24x             |            ~78x             | Sorts a given matrix                                                       |
