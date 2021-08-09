@@ -21,7 +21,7 @@
 // SOFTWARE.
 
 #include <cstring>
-#include <stdexcept>
+#include <cassert>
 #include <stddef.h>
 
 namespace mat
