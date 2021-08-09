@@ -165,10 +165,18 @@ namespace mat
         }
 
         //Indexing
-        T GetAt(size_t x, size_t y) const { return this->_internal[(y * Width()) + x]; }
-        T GetFastAt(size_t index) const { return this->_internal[index]; }
-        void SetAt(size_t x, size_t y, T &&value) { this->_internal[(y * Width()) + x] = value; }
-        void SetFastAt(size_t index, T &&value) { this->_internal[index] = value; }
+        T GetAt(size_t x, size_t y) const { return GetFastAt((y * Width()) + x); }
+        T GetFastAt(size_t index) const
+        {
+            assert(this->_size > index);
+            return this->_internal[index];
+        }
+        void SetAt(size_t x, size_t y, T value) { SetFastAt((y * Width()) + x, value); }
+        void SetFastAt(size_t index, T value)
+        {
+            assert(this->_size > index);
+            this->_internal[index] = value;
+        }
 
         ~hMat()
         {
