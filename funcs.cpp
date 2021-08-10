@@ -54,17 +54,17 @@ EMSCRIPTEN_BINDINGS(module)
     function("equal_mat_i32_f32", &Equal<hMat<int32_t>, hMat<float>>);
     function("equal_mat_i32_f64", &Equal<hMat<int32_t>, hMat<double>>);
 
-    MAT_GEN(mat_i64, int64_t)
+    // MAT_GEN(mat_i64, int64_t)
 
-    function("copy_mat_i64_i32", &Copy<hMat<int64_t>, hMat<int32_t>>);
-    function("copy_mat_i64_i64", &Copy<hMat<int64_t>, hMat<int64_t>>);
-    function("copy_mat_i64_f32", &Copy<hMat<int64_t>, hMat<float>>);
-    function("copy_mat_i64_f64", &Copy<hMat<int64_t>, hMat<double>>);
+    // function("copy_mat_i64_i32", &Copy<hMat<int64_t>, hMat<int32_t>>);
+    // function("copy_mat_i64_i64", &Copy<hMat<int64_t>, hMat<int64_t>>);
+    // function("copy_mat_i64_f32", &Copy<hMat<int64_t>, hMat<float>>);
+    // function("copy_mat_i64_f64", &Copy<hMat<int64_t>, hMat<double>>);
 
-    function("equal_mat_i64_i32", &Equal<hMat<int32_t>, hMat<int32_t>>);
-    function("equal_mat_i64_i64", &Equal<hMat<int32_t>, hMat<int64_t>>);
-    function("equal_mat_i64_f32", &Equal<hMat<int32_t>, hMat<float>>);
-    function("equal_mat_i64_f64", &Equal<hMat<int32_t>, hMat<double>>);
+    // function("equal_mat_i64_i32", &Equal<hMat<int32_t>, hMat<int32_t>>);
+    // function("equal_mat_i64_i64", &Equal<hMat<int32_t>, hMat<int64_t>>);
+    // function("equal_mat_i64_f32", &Equal<hMat<int32_t>, hMat<float>>);
+    // function("equal_mat_i64_f64", &Equal<hMat<int32_t>, hMat<double>>);
 
     MAT_GEN(mat_f32, float)
 
