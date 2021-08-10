@@ -31,11 +31,23 @@ all tests done with JS Array, speedup varies per system of course.
 ## Operations
 as a general rule, always use the built libary algs when possible, as they are much faster than vanilla JS.
 
-| name             | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                                                |
-| :--------------- | :-------------------------: | :-------------------------: | -------------------------------------------------------------------------- |
-| `randfill_mat_*` |           ~1.20x            |           ~1.20x            | Fills a matrix with a random value between `min` and `max`                 |
-| `fill_mat_*`     |             ~2x             |             ~5x             | Fills a matrix with a given value                                          |
-| `copy_mat_*`     |             ~7x             |            ~14x             | Copies the contents of one matrix to another, without modifying dimensions |
-| `sort_mat_*`     |            ~24x             |            ~78x             | Sorts a given matrix                                                       |
+| name                  | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                                                |
+| :-------------------- | :-------------------------: | :-------------------------: | -------------------------------------------------------------------------- |
+| `sort_mat_*`          |            ~24x             |            ~78x             | `std::sort` wrapper                                                        |
+| `find_mat_*`          |                             |                             | `std::find` wrapper                                                        |
+| `accumulate_mat_*`    |                             |                             | `std::accumulate` wrapper                                                  |
+| `lower_bound_mat_*`   |                             |                             | `std::lower_bound` wrapper                                                 |
+| `upper_bound_mat_*`   |                             |                             | `std::upper_bound` wrapper                                                 |
+| `reverse_mat_*`       |                             |                             | `std::reverse` wrapper                                                     |
+| `min_element_mat_*`   |                             |                             | `std::min_element` wrapper                                                 |
+| `max_element_mat_*`   |                             |                             | `std::max_element` wrapper                                                 |
+| `iota_mat_*`          |                             |                             | `std::iota` wrapper                                                        |
+| `count_mat_*`         |                             |                             | `std::count` wrapper                                                       |
+| `binary_search_mat_*` |                             |                             | `std::binary_search` wrapper                                               |
+| `fill_mat_*_*`        |             ~2x             |             ~5x             | `std::fill` wrapper                                                        |
+| `rotate_mat_*`        |                             |                             | `std::rotate` wrapper                                                      |
+| `randfill_mat_*`      |           ~1.20x            |           ~0.59x            | Fills a matrix with a random value between `min` and `max`                 |
+| `equal_mat_*_*`       |                             |                             | `std::equal` wrapper                                                       |
+| `copy_mat_*_*`        |             ~7x             |            ~14x             | Copies the contents of one matrix to another, without modifying dimensions |
 
 speedup increases as size does.
