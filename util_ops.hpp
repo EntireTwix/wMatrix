@@ -1,10 +1,11 @@
 #pragma once
 #include <random>
+#include "hmat.hpp"
 
 namespace mat
 {
     template <typename M, typename M2>
-    void Copy(const M &src, M2 &dest)
+    constexpr void Copy(const M &src, M2 &dest)
     {
         if (src.Area() == dest.Area())
         {
@@ -28,7 +29,7 @@ namespace mat
         }
     }
     template <typename M>
-    void Copy(const M &src, M &dest)
+    constexpr void Copy(const M &src, M &dest)
     {
         if (src.Area() == dest.Area())
         {
