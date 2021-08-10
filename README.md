@@ -15,7 +15,7 @@ all tests done with JS Array, speedup varies per system of course.
 | `new Module.mat_*(mat_* m)`            |            3.36x            |            2.26x            |            3.43x            | Constructs a new Matrix from an existing one                               |
 | `new Module.mat_*(size_t w, size_t h)` |            3.64x            |            1.18x            |            3.27x            | Constructs a new Matrix of `w * h`                                         |
 | `.width()`                             |            `N/A`            |            `N/A`            |            `N/A`            | Returns the `width` of the matrix                                          |
-| `.height()`                            |                             |            `N/A`            |            `N/A`            | Returns the `height` of the matrix                                         |
+| `.height()`                            |            `N/A`            |            `N/A`            |            `N/A`            | Returns the `height` of the matrix                                         |
 | `.area()`                              |            0.57x            |            0.57x            |            0.57x            | Returns the `area` of the matrix                                           |
 | `.capacity()`                          |            `N/A`            |            `N/A`            |            `N/A`            | Returns the current number of elements allocated                           |
 | `.reserve(size_t n)`                   |            `N/A`            |            `N/A`            |            `N/A`            | Explicitly reserves `n` elements in memory if larger then current capacity |
