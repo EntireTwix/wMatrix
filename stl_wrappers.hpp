@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <cassert>
 #include <numeric>
+#include "js.hpp"
 
 namespace mat
 {
@@ -18,27 +19,27 @@ namespace mat
     }
 
     template <typename M>
-    constexpr size_t Find(const M &mat, typename M::type val)
+    constexpr size_t Find(const M &mat, js_number val)
     {
-        return ValidIndex(mat, std::find(mat.begin(), mat.end(), val) - mat.begin());
+        return std::find(mat.begin(), mat.end(), val) - mat.begin();
     }
 
     template <typename M>
-    constexpr typename M::type Accumulate(const M &mat)
+    constexpr js_number Accumulate(const M &mat, js_number init)
     {
-        return std::accumulate(mat.begin(), mat.end(), 0);
+        return std::accumulate(mat.begin(), mat.end(), init);
     }
 
     template <typename M>
-    constexpr size_t LowerBound(const M &mat, typename M::type val)
+    constexpr size_t LowerBound(const M &mat, js_number val)
     {
-        return ValidIndex(mat, std::lower_bound(mat.begin(), mat.end(), val) - mat.begin());
+        return std::lower_bound(mat.begin(), mat.end(), val) - mat.begin();
     }
 
     template <typename M>
-    constexpr size_t UpperBound(const M &mat, typename M::type val)
+    constexpr size_t UpperBound(const M &mat, js_number val)
     {
-        return ValidIndex(mat, std::upper_bound(mat.begin(), mat.end(), val) - mat.begin());
+        return std::upper_bound(mat.begin(), mat.end(), val) - mat.begin();
     }
 
     template <typename M>
@@ -50,29 +51,29 @@ namespace mat
     template <typename M>
     constexpr size_t MinElement(const M &mat)
     {
-        return ValidIndex(mat, std::min_element(mat.begin(), mat.end()) - mat.begin());
+        return std::min_element(mat.begin(), mat.end()) - mat.begin();
     }
 
     template <typename M>
     constexpr size_t MaxElement(const M &mat)
     {
-        return ValidIndex(mat, std::max_element(mat.begin(), mat.end()) - mat.begin());
+        return std::max_element(mat.begin(), mat.end()) - mat.begin();
     }
 
     template <typename M>
-    constexpr void Iota(M &mat, typename M::type val)
+    constexpr void Iota(M &mat, js_number val)
     {
         std::iota(mat.begin(), mat.end(), val);
     }
 
     template <typename M>
-    constexpr size_t Count(const M &mat, typename M::type val)
+    constexpr size_t Count(const M &mat, js_number val)
     {
         return std::count(mat.begin(), mat.end(), val);
     }
 
     template <typename M>
-    constexpr bool BinarySearch(const M &mat, typename M::type val)
+    constexpr bool BinarySearch(const M &mat, js_number val)
     {
         return std::binary_search(mat.begin(), mat.end(), val);
     }
@@ -88,7 +89,7 @@ namespace mat
     }
 
     template <typename M>
-    constexpr void Fill(M &mat, typename M::type val)
+    constexpr void Fill(M &mat, js_number val)
     {
         std::fill(mat.begin(), mat.end(), val);
     }
