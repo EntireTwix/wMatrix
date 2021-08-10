@@ -1,6 +1,7 @@
 #pragma once
 #include <random>
 #include "hmat.hpp"
+#include "js.hpp"
 
 namespace mat
 {
@@ -52,30 +53,10 @@ namespace mat
 
     static std::default_random_engine generator(time(NULL));
     template <typename M>
-    void RandFill(M &mat, typename M::type min, typename M::type max)
+    void RandFill(M &mat, js_number min, js_number max)
     {
         assert(max > min);
-        std::uniform_real_distribution<typename M::type> distribution(min, max);
-        for (auto &e : mat)
-        {
-            e = distribution(generator);
-        }
-    }
-    template <>
-    void RandFill(hMat<int32_t> &mat, int32_t min, int32_t max)
-    {
-        assert(max > min);
-        std::uniform_int_distribution<int32_t> distribution(min, max);
-        for (auto &e : mat)
-        {
-            e = distribution(generator);
-        }
-    }
-    template <>
-    void RandFill(hMat<int64_t> &mat, int64_t min, int64_t max)
-    {
-        assert(max > min);
-        std::uniform_int_distribution<int64_t> distribution(min, max);
+        std::uniform_real_distribution<js_number> distribution(min, max);
         for (auto &e : mat)
         {
             e = distribution(generator);
