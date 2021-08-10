@@ -21,10 +21,10 @@ all tests done with JS Array, speedup varies per system of course.
 | `.reserve(size_t n)`                   |            `N/A`            |            `N/A`            |            `N/A`            | Explicitly reserves `n` elements in memory if larger then current capacity |
 | `.resize(size_t w, size_t h)`          |         0.32x - 34x         |         0.32x - 18x         |         0.32x - 31x         | Resizes the array to a new size, reserves more memory if nessasary         |
 | `.flatten()`                           |            `N/A`            |            `N/A`            |            `N/A`            | Flattens a matrix into a 1D vector                                         |
-| `.set_at(size_t w, size_t h, T val)`   |                             |              ?              |              ?              | Setting the value of the matrix, indexed as a 2D array                     |
-| `.get_at(size_t w, size_t h)`          |                             |              ?              |              ?              | Indexing as a 2D array                                                     |
-| `.set_fast_at(size_t idx, T val)`      |                             |              ?              |              ?              | Setting the value of the matrix, indexed as a 1D array                     |
-| `.get_fast_at(size_t idx)`             |                             |              ?              |              ?              | Indexing as a 1D array                                                     |
+| `.set_at(size_t w, size_t h, T val)`   |              ?              |              ?              |              ?              | Setting the value of the matrix, indexed as a 2D array                     |
+| `.get_at(size_t w, size_t h)`          |              ?              |              ?              |              ?              | Indexing as a 2D array                                                     |
+| `.set_fast_at(size_t idx, T val)`      |              ?              |              ?              |              ?              | Setting the value of the matrix, indexed as a 1D array                     |
+| `.get_fast_at(size_t idx)`             |              ?              |              ?              |              ?              | Indexing as a 1D array                                                     |
  
  
 ## Operations
@@ -32,7 +32,7 @@ as a general rule, always use the built libary algs when possible, as they are m
 
 | name                  | 1000x1000 `mat_f32` speedup | 1000x1000 `mat_f64` speedup | 1000x1000 `mat_i32` speedup | description                                                                |
 | :-------------------- | :-------------------------: | :-------------------------: | :-------------------------: | -------------------------------------------------------------------------- |
-| `sort_mat_*`          |            ~40x             |            ~41x             |            ~119x            | `std::sort` wrapper                                                        |
+| `sort_mat_*`          |             40x             |             41x             |            119x             | `std::sort` wrapper                                                        |
 | `find_mat_*`          |                             |                             |                             | `std::find` wrapper                                                        |
 | `accumulate_mat_*`    |                             |                             |                             | `std::accumulate` wrapper                                                  |
 | `lower_bound_mat_*`   |                             |                             |                             | `std::lower_bound` wrapper                                                 |
