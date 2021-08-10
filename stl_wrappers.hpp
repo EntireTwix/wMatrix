@@ -5,73 +5,80 @@
 namespace mat
 {
     template <typename M>
-    void SortMut(M &mat)
+    constexpr size_t ValidIndex(const M &mat, size_t idx)
+    {
+        assert(mat.Area() > idx);
+        return idx;
+    }
+
+    template <typename M>
+    constexpr void SortMut(M &mat)
     {
         std::sort(mat.begin(), mat.end());
     }
 
     template <typename M>
-    size_t Find(const M &mat, typename M::type val)
+    constexpr size_t Find(const M &mat, typename M::type val)
     {
-        return ValidIndex(std::find(mat.begin(), mat.end(), val) - mat.begin());
+        return ValidIndex(mat, std::find(mat.begin(), mat.end(), val) - mat.begin());
     }
 
     template <typename M>
-    typename M::type Accumulate(const M &mat)
+    constexpr typename M::type Accumulate(const M &mat)
     {
-        return std::accumulate(mat.begin(), mat.end());
+        return std::accumulate(mat.begin(), mat.end(), 0);
     }
 
     template <typename M>
-    size_t LowerBound(const M &mat, typename M::type val)
+    constexpr size_t LowerBound(const M &mat, typename M::type val)
     {
-        return ValidIndex(std::lower_bound(mat.begin(), mat.end(), val) - mat.begin());
+        return ValidIndex(mat, std::lower_bound(mat.begin(), mat.end(), val) - mat.begin());
     }
 
     template <typename M>
-    size_t UpperBound(const M &mat, typename M::type val)
+    constexpr size_t UpperBound(const M &mat, typename M::type val)
     {
-        return ValidIndex(std::upper_bound(mat.begin(), mat.end(), val) - mat.begin());
+        return ValidIndex(mat, std::upper_bound(mat.begin(), mat.end(), val) - mat.begin());
     }
 
     template <typename M>
-    void Reverse(M &mat)
+    constexpr void Reverse(M &mat)
     {
         std::reverse(mat.begin(), mat.end());
     }
 
     template <typename M>
-    size_t MinElement(const M &mat)
+    constexpr size_t MinElement(const M &mat)
     {
-        return ValidIndex(std::min_element(mat.begin(), mat.end()) - mat.begin());
+        return ValidIndex(mat, std::min_element(mat.begin(), mat.end()) - mat.begin());
     }
 
     template <typename M>
-    size_t MaxElement(const M &mat)
+    constexpr size_t MaxElement(const M &mat)
     {
-        return ValidIndex(std::max_element(mat.begin(), mat.end()) - mat.begin());
+        return ValidIndex(mat, std::max_element(mat.begin(), mat.end()) - mat.begin());
     }
 
     template <typename M>
-    void Iota(M &mat, typename M::type val)
+    constexpr void Iota(M &mat, typename M::type val)
     {
         std::iota(mat.begin(), mat.end(), val);
     }
 
     template <typename M>
-    size_t Count(const M &mat, typename M::type val)
+    constexpr size_t Count(const M &mat, typename M::type val)
     {
-        return std::count(mat.begin(), mat.end());
+        return std::count(mat.begin(), mat.end(), val);
     }
 
     template <typename M>
-    size_t BinarySearch(const M &mat, typename M::type val)
+    constexpr bool BinarySearch(const M &mat, typename M::type val)
     {
-        return ValidIndex(std::binary_search(mat.begin(), mat.end(), val) - mat.begin());
+        return std::binary_search(mat.begin(), mat.end(), val);
     }
 
     template <typename M, typename M2>
-    bool Equal(const M &a, const M &b)
+    constexpr bool Equal(const M &a, const M2 &b)
     {
         if (a.Area() != b.Area())
         {
@@ -81,21 +88,14 @@ namespace mat
     }
 
     template <typename M>
-    void Fill(M &mat, typename M::type val)
+    constexpr void Fill(M &mat, typename M::type val)
     {
         std::fill(mat.begin(), mat.end(), val);
     }
 
     template <typename M>
-    void Rotate(M &mat, size_t middle_idx)
+    constexpr void Rotate(M &mat, size_t middle_idx)
     {
         std::rotate(mat.begin(), mat.begin() + middle_idx, mat.end());
-    }
-
-    template <typename M>
-    size_t ValidIndex(const M &mat, size_t idx)
-    {
-        assert(mat.Area() > idx);
-        return idx;
     }
 }
